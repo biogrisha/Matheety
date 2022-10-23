@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{3eec3443-9171-4a3c-b1ed-2d237fef303f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{5e23a621-cd45-4291-8567-28960f556b71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_impl_glfw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor\stb_image\std_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor\GLAD\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\Helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicFunction\DynamicFunctionFabric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicFunction\DllFileBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3DAuxiliaryFunctions\VectorFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchRendering\GLBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchRendering\InputBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchRendering\FrameViewManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\GraphRenderProcess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BatchRendering\RenderUnits\ru_graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\Graph2to1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\FunctionInput\view_functionInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imconfig.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imgui.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imgui_impl_glfw.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imgui_internal.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imstb_rectpack.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imstb_textedit.h" />
+    <ClInclude Include="..\..\ImGuiProjects\imguitest\imstb_truetype.h" />
+    <ClInclude Include="Vendor\GLAD\shader_s.h" />
+    <ClInclude Include="Vendor\stb_image\stb_image.h" />
+    <ClInclude Include="Helpers\Helpers.h" />
+    <ClInclude Include="DynamicFunction\DynamicFunctionFabric.h" />
+    <ClInclude Include="DynamicFunction\DllFileBuilder.h" />
+    <ClInclude Include="3DAuxiliaryFunctions\PointsGenerator\PointsGenerator2to1.h" />
+    <ClInclude Include="Shader\shader_s.h" />
+    <ClInclude Include="3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.h" />
+    <ClInclude Include="3DAuxiliaryFunctions\VectorFunctions.h" />
+    <ClInclude Include="BatchRendering\GLBuffer.h" />
+    <ClInclude Include="BatchRendering\GraphicEnums.h" />
+    <ClInclude Include="GraphicStructs\GraphicStructs.h" />
+    <ClInclude Include="BatchRendering\InputBuffer.h" />
+    <ClInclude Include="BatchRendering\FrameViewManager.h" />
+    <ClInclude Include="BatchRendering\RenderUnit.h" />
+    <ClInclude Include="3DAuxiliaryFunctions\Camera.h" />
+    <ClInclude Include="Application\GraphRenderProcess.h" />
+    <ClInclude Include="BatchRendering\RenderUnits\ru_graph.h" />
+    <ClInclude Include="Graphs\Graph2to1.h" />
+    <ClInclude Include="Helpers\trait_is_right_callable.h" />
+    <ClInclude Include="Application\Events.h" />
+    <ClInclude Include="Views\FunctionInput\view_functionInput.h" />
+  </ItemGroup>
+</Project>
