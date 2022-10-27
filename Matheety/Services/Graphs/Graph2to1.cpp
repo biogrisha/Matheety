@@ -34,7 +34,7 @@ void Graph2to1::SetPointCount(int count)
 {
     if (m_pointsCount != count)
     {
-        m_trackChanges.OnCountUpdated();
+        events.countChanged = true;
     }
     m_pointsCount = count;
 
@@ -47,7 +47,7 @@ int Graph2to1::GetPointCount()
 
 void Graph2to1::CalculatePoints()
 {
-    m_trackChanges.OnPointsUpdated();
+    events.pointsChanged = true;
     m_points.clear();
     m_pointGenerator.CalculatePoints(m_points, m_xFrom, m_xTo, m_yFrom, m_yTo,m_pointsCount);
 }
@@ -55,4 +55,11 @@ void Graph2to1::CalculatePoints()
 std::vector<Vertex>& Graph2to1::GetPoints()
 {
     return m_points;
+}
+
+void Graph2to1::Events::Submit()
+{
+    pointsChanged = false;
+    countChanged = false;
+
 }

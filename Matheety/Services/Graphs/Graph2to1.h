@@ -1,10 +1,12 @@
 #pragma once
 #include <memory>
 #include <iostream>
-#include <3DAuxiliaryFunctions/PointsGenerator/PointsGenerator2to1.h>
-#include <3DAuxiliaryFunctions/VectorFunctions.h>
-#include <3DAuxiliaryFunctions/IndexGenerator/IGTopSquaresProjection/IGTopSquaresProjection.h>
-
+#include <Services/3DAuxiliaryFunctions/PointsGenerator/PointsGenerator2to1.h>
+#include <Services/3DAuxiliaryFunctions/VectorFunctions.h>
+#include <Services/3DAuxiliaryFunctions/IndexGenerator/IGTopSquaresProjection/IGTopSquaresProjection.h>
+#include <Services/Helpers/Macroses.h>
+#include <Services/DynamicFunction/DynamicFunctionFabric.h>
+#include <Services/GraphicStructs/GraphicStructs.h>
 class Graph2to1
 {
 public:
@@ -17,39 +19,19 @@ public:
 	std::vector<Vertex>& GetPoints();
 	
 
-	struct {
+	struct Events{
 	public:
-		void OnPointsUpdated()
-		{
-			m_pointsChanged = true;
-		}
-		
-		bool IsPointsUpdated()
-		{
-			return m_pointsChanged;
-		}
+		Getter(IsPointsChanged, pointsChanged, bool)
+		Getter(IsCountChanged, countChanged, bool)
 
+		void Submit();
 
-		void OnCountUpdated()
-		{
-			m_countChanged = true;
-		}
-
-		bool IsCountUpdated()
-		{
-			return m_countChanged;
-		}
-
-		void Submit()
-		{
-			m_pointsChanged = false;
-			m_countChanged = false;
-
-		}
 	private:
-		bool m_pointsChanged = false;
-		bool m_countChanged = false;
-	}m_trackChanges;
+		bool pointsChanged = false;
+		bool countChanged = false;
+
+		friend Graph2to1;
+	}events;
 
 
 private:
@@ -57,7 +39,7 @@ private:
 	int m_pointsCount = 0;
 	float m_xFrom = 0, m_xTo = 0, m_yFrom = 0, m_yTo = 0;
 	std::vector<Vertex> m_points;
-	std::unique_ptr <DynamicFunction<float,float,float>> m_functionPtr;
+	std::unique_ptr<DynamicFunction<float,float,float>> m_functionPtr;
 	PointsGenerator2to1<DynamicFunction<float, float, float>> m_pointGenerator;
 
 	

@@ -1,10 +1,10 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <3DAuxiliaryFunctions/Camera.h>
-#include <3DAuxiliaryFunctions/IndexGenerator/IGTopSquaresProjection/IGTopSquaresProjection.h>
-#include <Graphs/Graph2to1.h>
-#include <Shader/shader_s.h>
+#include <Services/3DAuxiliaryFunctions/Camera.h>
+#include <Services/3DAuxiliaryFunctions/IndexGenerator/IGTopSquaresProjection/IGTopSquaresProjection.h>
+#include <Services/Graphs/Graph2to1.h>
+#include <Services/Shader/shader_s.h>
 #include "../RenderUnit.h"
 #include "../GLBuffer.h"
 

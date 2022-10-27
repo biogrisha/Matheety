@@ -4,7 +4,7 @@
 #include <exception>
 #include <memory>
 #include <boost/locale.hpp>
-#include <Helpers/Helpers.h>
+#include <Services/Helpers/Helpers.h>
 #include "DllFileBuilder.h"
 
 class FF_DllFolderManager

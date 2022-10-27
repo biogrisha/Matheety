@@ -2,9 +2,9 @@
 #include <memory>
 #include <math.h>
 #include <exception>
-#include <DynamicFunction/DynamicFunctionFabric.h>
-#include <GraphicStructs/GraphicStructs.h>
-#include <Helpers/trait_is_right_callable.h>
+#include <Services/DynamicFunction/DynamicFunctionFabric.h>
+#include <Services/GraphicStructs/GraphicStructs.h>
+#include <Services/Helpers/trait_is_right_callable.h>
 
 template<typename Functor>
 class PointsGenerator2to1

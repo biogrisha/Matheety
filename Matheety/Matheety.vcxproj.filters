@@ -47,40 +47,49 @@
     <ClCompile Include="Vendor\GLAD\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Helpers\Helpers.cpp">
+    <ClCompile Include="Services\Helpers\Helpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicFunction\DynamicFunctionFabric.cpp">
+    <ClCompile Include="Services\DynamicFunction\DynamicFunctionFabric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicFunction\DllFileBuilder.cpp">
+    <ClCompile Include="Services\DynamicFunction\DllFileBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.cpp">
+    <ClCompile Include="Services\3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="3DAuxiliaryFunctions\VectorFunctions.cpp">
+    <ClCompile Include="Services\3DAuxiliaryFunctions\VectorFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatchRendering\GLBuffer.cpp">
+    <ClCompile Include="Services\BatchRendering\GLBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatchRendering\InputBuffer.cpp">
+    <ClCompile Include="Services\BatchRendering\InputBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatchRendering\FrameViewManager.cpp">
+    <ClCompile Include="Services\BatchRendering\FrameViewManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application\GraphRenderProcess.cpp">
+    <ClCompile Include="Modules\GraphModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatchRendering\RenderUnits\ru_graph.cpp">
+    <ClCompile Include="Services\BatchRendering\RenderUnits\ru_graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graphs\Graph2to1.cpp">
+    <ClCompile Include="Services\Graphs\Graph2to1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Views\FunctionInput\view_functionInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\RenderSpace\view_renderSpace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Processes\GraphProcess\GraphsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,25 +105,31 @@
     <ClInclude Include="..\..\ImGuiProjects\imguitest\imstb_truetype.h" />
     <ClInclude Include="Vendor\GLAD\shader_s.h" />
     <ClInclude Include="Vendor\stb_image\stb_image.h" />
-    <ClInclude Include="Helpers\Helpers.h" />
-    <ClInclude Include="DynamicFunction\DynamicFunctionFabric.h" />
-    <ClInclude Include="DynamicFunction\DllFileBuilder.h" />
-    <ClInclude Include="3DAuxiliaryFunctions\PointsGenerator\PointsGenerator2to1.h" />
-    <ClInclude Include="Shader\shader_s.h" />
-    <ClInclude Include="3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.h" />
-    <ClInclude Include="3DAuxiliaryFunctions\VectorFunctions.h" />
-    <ClInclude Include="BatchRendering\GLBuffer.h" />
-    <ClInclude Include="BatchRendering\GraphicEnums.h" />
-    <ClInclude Include="GraphicStructs\GraphicStructs.h" />
-    <ClInclude Include="BatchRendering\InputBuffer.h" />
-    <ClInclude Include="BatchRendering\FrameViewManager.h" />
-    <ClInclude Include="BatchRendering\RenderUnit.h" />
-    <ClInclude Include="3DAuxiliaryFunctions\Camera.h" />
-    <ClInclude Include="Application\GraphRenderProcess.h" />
-    <ClInclude Include="BatchRendering\RenderUnits\ru_graph.h" />
-    <ClInclude Include="Graphs\Graph2to1.h" />
-    <ClInclude Include="Helpers\trait_is_right_callable.h" />
-    <ClInclude Include="Application\Events.h" />
+    <ClInclude Include="Services\Helpers\Helpers.h" />
+    <ClInclude Include="Services\DynamicFunction\DynamicFunctionFabric.h" />
+    <ClInclude Include="Services\DynamicFunction\DllFileBuilder.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\PointsGenerator2to1.h" />
+    <ClInclude Include="Services\Shader\shader_s.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\VectorFunctions.h" />
+    <ClInclude Include="Services\BatchRendering\GLBuffer.h" />
+    <ClInclude Include="Services\BatchRendering\GraphicEnums.h" />
+    <ClInclude Include="Services\GraphicStructs\GraphicStructs.h" />
+    <ClInclude Include="Services\BatchRendering\InputBuffer.h" />
+    <ClInclude Include="Services\BatchRendering\FrameViewManager.h" />
+    <ClInclude Include="Services\BatchRendering\RenderUnit.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\Camera.h" />
+    <ClInclude Include="Modules\GraphModule.h" />
+    <ClInclude Include="Services\BatchRendering\RenderUnits\ru_graph.h" />
+    <ClInclude Include="Services\Graphs\Graph2to1.h" />
+    <ClInclude Include="Services\Helpers\trait_is_right_callable.h" />
     <ClInclude Include="Views\FunctionInput\view_functionInput.h" />
+    <ClInclude Include="Views\RenderSpace\view_renderSpace.h" />
+    <ClInclude Include="Services\Helpers\Macroses.h" />
+    <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Services\Helpers\Event.h" />
+    <ClInclude Include="Application\Processes\GraphProcess\GraphsProcess.h" />
+    <ClInclude Include="Application\Processes\GraphProcess\ModRel_Graph_FuncInput.h" />
+    <ClInclude Include="Application\Processes\GraphProcess\ModRel_Graph_RenderSpace.h" />
   </ItemGroup>
 </Project>

@@ -11,21 +11,8 @@ ru_graph::ru_graph(GLBP_wrap&& subbuf, uint32_t frameViewId, Camera* camera, glm
 
 void ru_graph::Update(uint32_t renderTarget)
 {
-	static float zDist = 10;
-	static bool zDir = false;
 
-	if (zDist > 10)
-	{
-		zDir = true;
-	}
-	if (zDist < 5)
-	{
-		zDir = false;
-	}
-
-	zDist += 0.03 * (-1 * zDir + 1 * (!zDir));
-
-	if (m_graph->m_trackChanges.IsCountUpdated())
+	if (m_graph->events.GetIsCountChanged())
 	{
 		std::vector<int> inds;
 		IGTopSquaresProjection::GenerateIndices(inds, m_graph->GetPointCount(), m_graph->GetPointCount());
@@ -33,12 +20,11 @@ void ru_graph::Update(uint32_t renderTarget)
 		m_subbuf->SetIndexCount(inds.size());
 	}
 
-	if (m_graph->m_trackChanges.IsPointsUpdated())
+	if (m_graph->events.GetIsPointsChanged())
 	{
 		m_subbuf->UpdateVertices(0, m_graph->GetPoints());
 	}
-
-	m_camera->SetPosition(0, 0, zDist, -90, 0, 0);
+	m_graph->events.Submit();
 
 	m_shader->use();
 	glm::mat4 projection = glm::perspective(glm::radians(m_camera->Zoom), (float)800 / (float)600, 0.5f, 50.0f);

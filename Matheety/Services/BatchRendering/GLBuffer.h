@@ -1,6 +1,6 @@
 #pragma once
 #include <glad/glad.h>
-#include <GraphicStructs/GraphicStructs.h>
+#include <Services/GraphicStructs/GraphicStructs.h>
 #include "InputBuffer.h"
 
 class GLSubBufferProfile //Each drawer must have a profile to use the buffer in its own private region of buffer
