@@ -19,3 +19,12 @@ const std::string& Helpers::GetAppPath()
 	return AppPath;
 }
 
+void Helpers::normalizedMouseCoords(double x, double y, double& outX, double& outY, int wWidth, int wHeight)
+{
+	float mx = x;
+	float my = y;
+	outX = (mx / ((float)wWidth / 2)) - 1;
+	outY = -(my / ((float)wHeight / 2)) + 1;
+
+};
+

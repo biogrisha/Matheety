@@ -37,6 +37,19 @@ GLuint GraphModule::GetRenderTgt()
     return m_frameView->GetRenderTarget();
 }
 
+void GraphModule::ChangeCameraDirection(float x, float y)
+{
+    m_camera.ProcessMouseMovement(x, y);
+    m_frameViewManager.RequestUpdate();
+}
+
+void GraphModule::MoveCamera(Camera_Movement direction, float deltaTime)
+{
+    m_camera.ProcessKeyboard(direction, deltaTime);
+    m_frameViewManager.RequestUpdate();
+
+}
+
 
 
 

@@ -14,13 +14,15 @@ public:
 	void UpdateGraphFunction(const std::string& body);
 	void UpdateState();
 	GLuint GetRenderTgt();
+	void ChangeCameraDirection(float x, float y);
+	void MoveCamera(Camera_Movement direction, float deltaTime);
 private:
 	
 	std::unique_ptr <GLBuffer> m_glBuf;
 	FrameViewManager m_frameViewManager;
 	FrameViewBase* m_frameView;
-	Graph2to1 m_graph;
 	Camera m_camera;
+	Graph2to1 m_graph;
 	glm::mat4 m_graphTransform;
 
 };

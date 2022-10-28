@@ -24,14 +24,37 @@ void view_renderSpace::Show()
     auto imgPos = ImGui::GetCursorPos();
     ImGui::Image((void*)(m_renderTarget), canvas_sz, uv0, uv1, tint_col, tint_col);
     ImGui::SetCursorPos(imgPos);
-    ImGui::InvisibleButton("canvas", canvas_sz, ImGuiButtonFlags_MouseButtonLeft | ImGuiButtonFlags_MouseButtonRight);
-    ImGui::SetItemUsingMouseWheel();
 
-    const bool is_hovered = ImGui::IsItemHovered(); // Hovered
-    const ImVec2 mouse_pos_in_canvas(io.MousePos.x - canvas_p0.x, io.MousePos.y - canvas_p0.y);
-    // Add first and second point
-    double xCoord = 0;
-    double yCoord = 0;
+    const ImVec2 origin(canvas_p0.x, canvas_p0.y); // Lock scrolled origin
+    const ImVec2 mouse_pos_in_canvas(io.MousePos.x - origin.x, io.MousePos.y - origin.y);
+
+    ImGui::InvisibleButton("canvas", canvas_sz, ImGuiButtonFlags_MouseButtonLeft | ImGuiButtonFlags_MouseButtonRight);
+
+    if (ImGui::IsMouseDown(ImGuiMouseButton_Left) && ImGui::IsItemHovered())
+    {
+        events.onMouseDrag(-io.MouseDelta.x, io.MouseDelta.y);
+    }
+
+    if (ImGui::IsKeyDown(ImGuiKey_W))
+    {
+        events.onWKey(ImGui::GetIO().DeltaTime);
+    }
+    if (ImGui::IsKeyDown(ImGuiKey_S))
+    {
+        events.onSKey(ImGui::GetIO().DeltaTime);
+    }
+    if (ImGui::IsKeyDown(ImGuiKey_A))
+    {
+        events.onAKey(ImGui::GetIO().DeltaTime);
+    }
+    if (ImGui::IsKeyDown(ImGuiKey_D))
+    {
+        events.onDKey(ImGui::GetIO().DeltaTime);
+    }
+
+    
+
+    
 
     ImGui::End();
 }

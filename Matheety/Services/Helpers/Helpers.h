@@ -24,4 +24,6 @@ namespace Helpers
     }
 
 	const std::string& GetAppPath();
+
+    void normalizedMouseCoords(double x, double y, double& outX, double& outY, int wWidth, int wHeight);
 }
