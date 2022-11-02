@@ -3,14 +3,19 @@
 GraphModule::GraphModule()
 {
     //services
+    m_simpleShader.reset(new Shader("Shaders\\vshad.vs", "Shaders\\fshad.fs"));
+
     m_camera.SetPosition(0, 0, 10, -90, 0, 0);
 
-    m_glBuf.reset(new GLBuffer(1000, 6000));
+    m_glBuf.reset(new GLBuffer(2000, 8000));
     m_frameView =  m_frameViewManager.AddFrameView(std::make_unique<FrameViewBase>(800, 600));
-    m_frameView->AddRenderUnit(std::unique_ptr<RenderUnit>(new ru_graph(m_glBuf->NewSubBuffer(1000, 6000), m_frameView->GetId(),&m_camera,&m_graphTransform,&m_graph)));
+    m_frameView->AddRenderUnit(std::unique_ptr<RenderUnit>(new ru_graph(m_glBuf->NewSubBuffer(1000, 6000), m_frameView->GetId(),&m_camera,&m_graph,m_simpleShader.get())));
+    m_frameView->AddRenderUnit(std::unique_ptr<RenderUnit>(new ru_coordinatePlane(m_glBuf->NewSubBuffer(60, 200), m_glBuf->NewSubBuffer(100, 100), m_frameView->GetId(), &m_camera,&m_coordAx,m_simpleShader.get())));
     
     m_graph.SetPointCount(30);
     m_graph.SetRange(-1, 1, -1, 1);
+
+
 
 }
 

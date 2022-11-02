@@ -27,7 +27,7 @@ public:
 	{
 		std::string GetFuncText();
 	private:
-		char m_funcText[1024 * 16] = "";
+		char m_funcText[1024 * 16] = "return x*y;";
 		friend view_functionInput;
 	}props;
 

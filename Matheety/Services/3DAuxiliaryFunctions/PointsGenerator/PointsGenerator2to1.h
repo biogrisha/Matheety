@@ -54,7 +54,7 @@ inline void PointsGenerator2to1<Functor>::CalculatePoints(std::vector<Vertex>& r
 		for (int j = 0; j < pointsCount; j++)
 		{
 			float z = (*m_funcPtr)(x, y);
-			res.push_back({ glm::vec4(x,y,z,1),glm::vec4()});
+			res.push_back({ glm::vec4(x,z,y,1),glm::vec4(0.5,z/5+0.5,0.5,1)});
 			y += yStep;
 		}
 		x += xStep;

@@ -5,7 +5,7 @@
 #include <memory>
 
 
-#define EVENT_CLASS_DEBUG
+//#define EVENT_CLASS_DEBUG
 
 template<typename... Args>
 class EventHandlerRAII;

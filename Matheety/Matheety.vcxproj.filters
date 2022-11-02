@@ -92,6 +92,21 @@
     <ClCompile Include="Application\Processes\GraphProcess\GraphsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Services\BatchRendering\RenderUnits\ru_coordinatePlane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\CoordinateAxis\CoordinateAxis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\CoordinateAxis\CoordinateAxisTraced.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\CoordinateAxis\AxisRenderDataCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ImGuiProjects\imguitest\imconfig.h" />
@@ -131,5 +146,10 @@
     <ClInclude Include="Application\Processes\GraphProcess\GraphsProcess.h" />
     <ClInclude Include="Application\Processes\GraphProcess\ModRel_Graph_FuncInput.h" />
     <ClInclude Include="Application\Processes\GraphProcess\ModRel_Graph_RenderSpace.h" />
+    <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinatePlane.h" />
+    <ClInclude Include="Services\CoordinateAxis\CoordinateAxis.h" />
+    <ClInclude Include="Services\CoordinateAxis\CoordinateAxisTraced.h" />
+    <ClInclude Include="Services\CoordinateAxis\AxisRenderDataCreator.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.h" />
   </ItemGroup>
 </Project>

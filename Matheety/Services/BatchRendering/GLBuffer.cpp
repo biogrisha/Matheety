@@ -16,7 +16,12 @@ void GLSubBufferProfile::UpdateIndices(unsigned int offset, const std::vector<in
 {
 	if (offset + indices.size() < m_indBufSize)
 	{
-		m_indBuff->Update(indices, GLintptr(offset + m_indBufId));
+		std::vector<int> indTemp = indices;
+		for (auto& el : indTemp)
+		{
+			el += m_vBufId;
+		}
+		m_indBuff->Update(indTemp, GLintptr(offset + m_indBufId));
 	}
 }
 

@@ -5,6 +5,8 @@
 #include <Services\BatchRendering/RenderUnits/ru_graph.h>
 #include <Services\Graphs/Graph2to1.h>
 #include <Services/3DAuxiliaryFunctions/Camera.h>
+#include <Services/CoordinateAxis/CoordinateAxisTraced.h>
+#include <Services/BatchRendering/RenderUnits/ru_coordinatePlane.h>
 
 class GraphModule
 {
@@ -19,10 +21,10 @@ public:
 private:
 	
 	std::unique_ptr <GLBuffer> m_glBuf;
+	std::unique_ptr<Shader> m_simpleShader;
 	FrameViewManager m_frameViewManager;
 	FrameViewBase* m_frameView;
 	Camera m_camera;
 	Graph2to1 m_graph;
-	glm::mat4 m_graphTransform;
-
+	CoordinateAxisTraced m_coordAx;
 };
