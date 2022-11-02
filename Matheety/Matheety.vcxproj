@@ -118,13 +118,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\MyFiles\dev\CPPDEV\thirdParty\boost_1_78_0\boost_1_78_0;C:\MyFiles\dev\CPPDEV\Projects\ImGuiProjects\imguitest;C:\MyFiles\dev\CPPDEV\thirdParty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\MyFiles\dev\CPPDEV\thirdParty\boost_1_78_0\boost_1_78_0;C:\MyFiles\dev\CPPDEV\Projects\ImGuiProjects\imguitest;C:\MyFiles\dev\CPPDEV\thirdParty\include;C:\MyFiles\dev\CPPDEV\thirdParty\ft2121\freetype-2.12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\MyFiles\dev\CPPDEV\thirdParty\boost_1_78_0\boost_1_78_0\lib;C:\MyFiles\dev\CPPDEV\thirdParty\libs\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\MyFiles\dev\CPPDEV\thirdParty\boost_1_78_0\boost_1_78_0\lib;C:\MyFiles\dev\CPPDEV\thirdParty\libs\GLFW;C:\MyFiles\dev\CPPDEV\thirdParty\ft2121\freetype-2.12.1\objs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,6 +158,7 @@
     <ClCompile Include="Modules\GraphModule.cpp" />
     <ClCompile Include="Services\BatchRendering\FrameViewManager.cpp" />
     <ClCompile Include="Services\BatchRendering\InputBuffer.cpp" />
+    <ClCompile Include="Services\BatchRendering\RenderUnits\ru_coordinateMarks.cpp" />
     <ClCompile Include="Services\BatchRendering\RenderUnits\ru_coordinatePlane.cpp" />
     <ClCompile Include="Services\BatchRendering\RenderUnits\ru_graph.cpp" />
     <ClCompile Include="Services\CoordinateAxis\AxisRenderDataCreator.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Services\3DAuxiliaryFunctions\IndexGenerator\IGTopSquaresProjection\IGTopSquaresProjection.cpp" />
     <ClCompile Include="Services\BatchRendering\GLBuffer.cpp" />
     <ClCompile Include="Services\Graphs\Graph2to1.cpp" />
+    <ClCompile Include="Services\TextRendering\TextRender.cpp" />
     <ClCompile Include="Vendor\GLAD\glad.c" />
     <ClCompile Include="Services\Helpers\Helpers.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -192,6 +194,7 @@
     <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\VectorFunctions.h" />
     <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinateMarks.h" />
     <ClInclude Include="Services\CoordinateAxis\AxisRenderDataCreator.h" />
     <ClInclude Include="Services\CoordinateAxis\CoordinateAxis.h" />
     <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinatePlane.h" />
@@ -214,6 +217,7 @@
     <ClInclude Include="Services\Helpers\trait_is_right_callable.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\PointsGenerator2to1.h" />
     <ClInclude Include="Services\Shader\shader_s.h" />
+    <ClInclude Include="Services\TextRendering\TextRender.h" />
     <ClInclude Include="Vendor\GLAD\shader_s.h" />
     <ClInclude Include="Vendor\stb_image\stb_image.h" />
     <ClInclude Include="Views\FunctionInput\view_functionInput.h" />

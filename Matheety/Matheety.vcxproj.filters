@@ -107,6 +107,12 @@
     <ClCompile Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Services\TextRendering\TextRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\BatchRendering\RenderUnits\ru_coordinateMarks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ImGuiProjects\imguitest\imconfig.h" />
@@ -151,5 +157,7 @@
     <ClInclude Include="Services\CoordinateAxis\CoordinateAxisTraced.h" />
     <ClInclude Include="Services\CoordinateAxis\AxisRenderDataCreator.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.h" />
+    <ClInclude Include="Services\TextRendering\TextRender.h" />
+    <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinateMarks.h" />
   </ItemGroup>
 </Project>

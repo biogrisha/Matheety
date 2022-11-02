@@ -123,6 +123,8 @@ void FrameViewBase::UpdateFrame()
 	glGetIntegerv(GL_VIEWPORT, aiViewport);
 	glViewport(0, 0, m_fb_width, m_fb_height);
 	glEnable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	for (auto& ru : m_renderUnits)
@@ -130,6 +132,7 @@ void FrameViewBase::UpdateFrame()
 		ru->Update(m_fb_renderedTexture);
 	}
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glDisable(GL_BLEND);
 	glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
 	glViewport(aiViewport[0], aiViewport[1], (GLsizei)aiViewport[2], (GLsizei)aiViewport[3]);
 }

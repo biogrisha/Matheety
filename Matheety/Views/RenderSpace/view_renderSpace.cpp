@@ -54,7 +54,7 @@ void view_renderSpace::Show()
 
     
 
-    
+
 
     ImGui::End();
 }

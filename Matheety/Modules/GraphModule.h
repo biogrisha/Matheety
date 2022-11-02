@@ -7,7 +7,8 @@
 #include <Services/3DAuxiliaryFunctions/Camera.h>
 #include <Services/CoordinateAxis/CoordinateAxisTraced.h>
 #include <Services/BatchRendering/RenderUnits/ru_coordinatePlane.h>
-
+#include <Services/BatchRendering/RenderUnits/ru_coordinateMarks.h>
+#include <Services/TextRendering/TextRender.h>
 class GraphModule
 {
 public:
@@ -27,4 +28,6 @@ private:
 	Camera m_camera;
 	Graph2to1 m_graph;
 	CoordinateAxisTraced m_coordAx;
+
+	
 };
