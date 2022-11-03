@@ -11,13 +11,13 @@ class Graph2to1
 {
 public:
 	void SetFunction(const std::string& body);
-	void SetRange(float xFrom, float xTo,float yFrom, float yTo);
-	void GetRange(float& xFrom, float& xTo, float& yFrom, float& yTo);
+	void SetRange(float xFrom, float xTo,float zFrom, float zTo);
+	void GetRange(float& xFrom, float& xTo, float& zFrom, float& zTo);
 	void SetPointCount(int count);//Point count in the one direction of square grid
 	int GetPointCount();//Point count in the one direction of square grid
 	void CalculatePoints();
 	std::vector<Vertex>& GetPoints();
-	
+	bool IsFuncSet();
 
 	struct Events{
 	public:
@@ -37,10 +37,10 @@ public:
 private:
 	std::unique_ptr<DynamicFunctionFabric> m_funcFabric;
 	int m_pointsCount = 0;
-	float m_xFrom = 0, m_xTo = 0, m_yFrom = 0, m_yTo = 0;
+	float m_xFrom = 0, m_xTo = 0, m_zFrom = 0, m_zTo = 0;
 	std::vector<Vertex> m_points;
 	std::unique_ptr<DynamicFunction<float,float,float>> m_functionPtr;
 	PointsGenerator2to1<DynamicFunction<float, float, float>> m_pointGenerator;
-
+	bool m_isFuncSet = false;
 	
 };

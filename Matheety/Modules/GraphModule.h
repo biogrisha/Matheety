@@ -19,6 +19,7 @@ public:
 	GLuint GetRenderTgt();
 	void ChangeCameraDirection(float x, float y);
 	void MoveCamera(Camera_Movement direction, float deltaTime);
+	void SetGraphRange(float val);
 private:
 	
 	std::unique_ptr <GLBuffer> m_glBuf;
@@ -28,6 +29,7 @@ private:
 	Camera m_camera;
 	Graph2to1 m_graph;
 	CoordinateAxisTraced m_coordAx;
-
+	float m_range = 1;
+	GLuint m_depthTexture;
 	
 };

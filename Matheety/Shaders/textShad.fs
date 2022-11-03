@@ -8,5 +8,7 @@ uniform sampler2D text;
 
 void main()
 {    
-    color =  vec4(1.0, 1.0, 1.0, texture(text, TexCoords).r);
+    if(texture(text, TexCoords).r < 0.1)
+        discard;
+    color =  vec4(1.0, 1.0, 1.0, 1.0);
 }

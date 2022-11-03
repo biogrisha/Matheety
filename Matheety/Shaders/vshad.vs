@@ -3,7 +3,6 @@ layout (location = 0) in vec4 aPos;
 layout (location = 1) in vec4 aCol;
 
 flat out vec4 col;
-
 uniform mat4 view;
 uniform mat4 projection;
 

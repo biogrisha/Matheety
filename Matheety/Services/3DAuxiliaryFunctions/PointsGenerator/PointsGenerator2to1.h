@@ -16,7 +16,7 @@ public:
 		m_funcPtr = funcPtr;
 	}
 
-	void CalculatePoints(std::vector<Vertex>& res, float x1, float x2, float y1, float y2, int pointsCount);
+	void CalculatePoints(std::vector<Vertex>& res, float x1, float x2, float z1, float z2, int pointsCount);
 	
 
 private:
@@ -24,39 +24,40 @@ private:
 };
 
 template<typename Functor>
-inline void PointsGenerator2to1<Functor>::CalculatePoints(std::vector<Vertex>& res, float x1, float x2, float y1, float y2, int pointsCount)
+inline void PointsGenerator2to1<Functor>::CalculatePoints(std::vector<Vertex>& res, float x1, float x2, float z1, float z2, int pointsCount)
 {
 	if (!m_funcPtr)
 	{
 		throw std::exception("You must provide the function pointer before calculating");
 	}
 	bool x1Smaller = x1 < x2;
-	bool y1Smaller = y1 < y2;
+	bool z1Smaller = z1 < z2;
 
 	if (!x1Smaller)
 	{
 		std::swap(x1, x2);
 	}
-	if (!y1Smaller)
+	if (!z1Smaller)
 	{
-		std::swap(y1, y2);
+		std::swap(z1, z2);
 	}
 
 	float xDist = x2 - x1;
-	float yDist = y2 - y1;
+	float zDist = z2 - z1;
 	float xStep = xDist / (pointsCount - 1);
-	float yStep = yDist / (pointsCount - 1);
+	float zStep = zDist / (pointsCount - 1);
 
 	float x = x1;
 	for (int i = 0; i < pointsCount; i++)
 	{
-		float y = y1;
+		float z = z1;
 		for (int j = 0; j < pointsCount; j++)
 		{
-			float z = (*m_funcPtr)(x, y);
-			res.push_back({ glm::vec4(x,z,y,1),glm::vec4(0.5,z/5+0.5,0.5,1)});
-			y += yStep;
+			float y = (*m_funcPtr)(x, z);
+			res.push_back({ glm::vec4(x,y,z,1),glm::vec4(0.5,z/5+0.5,0.5,0.8)});
+			z += zStep;
 		}
 		x += xStep;
 	}
+
 }

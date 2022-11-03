@@ -153,6 +153,7 @@
     <ClCompile Include="..\..\ImGuiProjects\imguitest\imgui_widgets.cpp" />
     <ClCompile Include="Application\Processes\GraphProcess\GraphsProcess.cpp" />
     <ClCompile Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.cpp" />
+    <ClCompile Include="Services\3DAuxiliaryFunctions\PointsGenerator\PointsNormalizer2to1.cpp" />
     <ClCompile Include="Services\3DAuxiliaryFunctions\VectorFunctions.cpp" />
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Modules\GraphModule.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="Application\Processes\GraphProcess\ModRel_Graph_RenderSpace.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\Camera.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\GridRenderDataGenerator.h" />
+    <ClInclude Include="Services\3DAuxiliaryFunctions\PointsGenerator\PointsNormalizer2to1.h" />
     <ClInclude Include="Services\3DAuxiliaryFunctions\VectorFunctions.h" />
     <ClInclude Include="Application\Application.h" />
     <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinateMarks.h" />
@@ -199,6 +201,7 @@
     <ClInclude Include="Services\CoordinateAxis\CoordinateAxis.h" />
     <ClInclude Include="Services\BatchRendering\RenderUnits\ru_coordinatePlane.h" />
     <ClInclude Include="Services\CoordinateAxis\CoordinateAxisTraced.h" />
+    <ClInclude Include="Services\GraphicStructs\GraphicEnums.h" />
     <ClInclude Include="Services\Helpers\Event.h" />
     <ClInclude Include="Modules\GraphModule.h" />
     <ClInclude Include="Services\BatchRendering\FrameViewManager.h" />

@@ -16,6 +16,7 @@ class ru_coordinatePlane : public RenderUnit
 {
 public:
 	ru_coordinatePlane(GLBP_wrap&& axisSubbuf, GLBP_wrap&& gridSubbuf, uint32_t frameViewId, Camera* camera, CoordinateAxisTraced* coordAx, Shader* shader);
+	~ru_coordinatePlane();
 	// Inherited via RenderUnit
 	virtual void Update(uint32_t renderTarget) override;
 
@@ -27,5 +28,6 @@ private:
 	CoordinateAxisTraced* m_coordAx;
 	std::vector<Vertex> m_vertices;
 	std::vector<int> m_indices;
+
 
 };

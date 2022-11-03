@@ -18,6 +18,7 @@ public:
 	{
 		Event<const std::string&> btn_click_run;
 		Event<bool> dispose;
+		Event<float> rangeChanged;
 		friend view_functionInput;
 
 	}events;
@@ -28,6 +29,11 @@ public:
 		std::string GetFuncText();
 	private:
 		char m_funcText[1024 * 16] = "return x*y;";
+
+		bool m_isSliderDragged = false;
+		float m_rangeFrom = 0.1;
+		float m_rangeTo = 10;
+		float m_ramgeVal = 0;
 		friend view_functionInput;
 	}props;
 

@@ -5,6 +5,7 @@
 #include <Services/3DAuxiliaryFunctions/IndexGenerator/IGTopSquaresProjection/IGTopSquaresProjection.h>
 #include <Services/Graphs/Graph2to1.h>
 #include <Services/Shader/shader_s.h>
+#include <Services/3DAuxiliaryFunctions/PointsGenerator/PointsNormalizer2to1.h>
 #include "../RenderUnit.h"
 #include "../GLBuffer.h"
 

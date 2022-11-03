@@ -2,10 +2,7 @@
 #include <Services/GraphicStructs/GraphicStructs.h>
 #include <vector>
 #include <Services/Helpers/Macroses.h>
-enum class AxisDir
-{
-	X,Y,Z
-};
+#include <Services/GraphicStructs/GraphicEnums.h>
 
 class CoordinateAxis
 {
@@ -19,7 +16,7 @@ public:
 	Getter(MarkDist, m_markDist, float)
 protected:
 	AxisDir m_axisDir = AxisDir::X;
-	float m_length = 2;
-	float m_markDist = 0.5;
+	float m_length = 1;
+	float m_markDist = 0.1;
 
 };

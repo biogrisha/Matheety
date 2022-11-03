@@ -31,6 +31,9 @@ void ru_graph::Update(uint32_t renderTarget)
 
 	m_shader->setMat4("projection", projection);
 	m_shader->setMat4("view", view);
+
 	glDrawElements(GL_TRIANGLES, m_subbuf->GetIndexCount(), GL_UNSIGNED_INT, (void*)(m_subbuf->GetIndexOffset() * sizeof(GLuint)));
+
+
 
 }

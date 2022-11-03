@@ -135,14 +135,15 @@ void TextRender::Render(Camera* camera, GlyphLoader* glyphLoader)
         m_shader->setMat4("view", view);
 
         int offset = 0;
+        glDepthFunc(GL_ALWAYS);
         for (uint32_t ind : m_glyphInds)
         {
-        
             glBindTexture(GL_TEXTURE_2D, glyphLoader->GetGlyphArray()[ind].TextureID);
             glDrawArrays(GL_POINTS, m_subbuf->GetVOffset()+ offset, m_glyphVertices[ind].glyphVertices.size());
         
             offset += m_glyphVertices[ind].glyphVertices.size();
         }
+        glDepthFunc(GL_LESS);
         glBindTexture(GL_TEXTURE_2D, 0);
 
     }

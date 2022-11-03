@@ -7,6 +7,14 @@ ru_coordinatePlane::ru_coordinatePlane(GLBP_wrap&& axisSubbuf, GLBP_wrap&& gridS
 	m_camera = camera;
 	m_coordAx = coordAx;
 	m_shader = shader;
+
+
+}
+
+ru_coordinatePlane::~ru_coordinatePlane()
+{
+
+
 }
 
 void ru_coordinatePlane::Update(uint32_t renderTarget)
@@ -42,7 +50,10 @@ void ru_coordinatePlane::Update(uint32_t renderTarget)
 
 	m_shader->setMat4("projection", projection);
 	m_shader->setMat4("view", view);
+
+
 	glDrawElements(GL_TRIANGLES, m_axisSubbuf->GetIndexCount(), GL_UNSIGNED_INT, (void*)(m_axisSubbuf->GetIndexOffset() * sizeof(GLuint)));
 	glDrawElements(GL_LINES, m_gridSubbuf->GetIndexCount(), GL_UNSIGNED_INT, (void*)(m_gridSubbuf->GetIndexOffset() * sizeof(GLuint)));
-	
+	glBindTexture(GL_TEXTURE_2D, 0);
+
 }
